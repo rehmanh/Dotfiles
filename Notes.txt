@@ -1,4 +1,7 @@
+-----tmux-----
 
+C-b + [
+> to enter scroll mode in the shell (q to quit)
 
 -----------------COMMANDS-----------------
 
