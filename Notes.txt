@@ -1,0 +1,164 @@
+
+
+-----------------COMMANDS-----------------
+
+w : to get some information about the users on the current system.
+
+date : gives us the date as well as the timestamp
+
+cal -month -year : gives us the month calendar for that year
+
+cal -year : gives us the whole calenda for that year
+
+whatis -command : to know what the said command does
+
+alias : to see what all aliases are set up 
+
+whereis -command : this is like which, but this gives you the location as well as everything that has said command in it
+
+echo : this is like print line in Java. 
+
+set : the UNIX variables
+
+pushd -directory_name : to set something to the directory stack 
+
+touch : to create a file with nothing in there. To make a file that has spaces in it, we must escape the space with \
+
+cat : concatente (just priint to the screen)
+
+cat file1 > file2 : put the contents of file1 into file2
+
+man -k <keyword> : search all the manuals for the keyword specified
+
+apropos <keyword> : this does the same thing that man does for searching keywords
+
+ping : to ping someone on the server or to ping the server itself
+
+ifconfig : gives you more information compared to ping
+
+chmod : to change the permissions. r - read w - write x - execute
+
+$ find ~ -name *.cc -exec chmod 700{} \; this is an example of how to find files
+
+mv : to move files from one place to the other, OR to rename
+
+cp: copy files. from src to dest
+
+rmdir : remove directory
+
+ln: to link a directory with another directory or file. There is only one copy created
+
+cp: creating a copy of a file
+
+inode: Index Node. This contains information about the files. inodes do Not contain path or file name information, only information about who owns the file, what group it belongs to etc. 
+
+history: depending on how the shell is configured, this shows the recent commands. 
+history -<number> : shows that number of commands last used.
+It is very useful for lazy people. We can do a command that was in history. 
+To do this, use this syntax : !<num>
+To repeat the previous command, we do !!
+
+CTRL - n : go to the next command
+CTRL - p : go to the previous command
+
+script <filename> : the commands that are typed after this are saved in filename
+
+^Z: suspend the current process and place it in the background
+
+<command> & : this automatically puts the command into the background so that you have access to the shell prompt while the command executes. 
+
+jobs: to see all the processes that are in the background
+
+find <dir> -type f(for files) d(for directory) : to find files or directories.
+EG. find <dir> -type. Look up find command and practice with it. 
+
+eg. find <dir> -type *.c -exec rm {} \; # remove all c files in the directory 
+
+cut: look this up. It might be helpful in looking up seconds in mac command
+
+---------------------ALIASES-----------------------
+
+alias ll ls -l : WE HAVE ALIASED THIS 
+
+
+---------------------MISCELLANEOUS-----------------
+
+Setting the path to the current working directory. Useful if you want to omit adding the ./ when running compiled C programs. > export PATH="$PATH:~:". This will be terminated when logging out of the shell, so in order to set up the path again, we would need to type this command again. Or we could save it to the bashrc file.
+
+Backticks: if we add backticks to a command, it is like adding parentheses to the commands as if it were a mathematical operator. It can then be used to pipe into another command:
+$ wc -l `ls | sort` #this lists files by alphabetical order and then provides a word count as well.
+
+$ ls | grep '^[^0-9]*$' # this lists all files in a directory that do NOT contain numbers
+
+sort : to sort text lines based on parameters that we pass in. 
+$ sort test > result # to save to an output file
+$ sort -o result test
+
+grep : helpful when you want to find shit. 
+$ grep -B 2 -A 1 "no" billofrights // find occurrences of "no" and two lines before and one line after these occurrences.  
+
+$ grep -v "no" billofrights // excluding the no keyword
+
+$ awk  //NF number of columns, NR number of rows. awk can also be used as a C interpreter. String manipulation. 
+condition { action } ... 
+
+BEGIN{
+}
+...
+END{
+}
+
+for loops in AWK:
+
+#!/bin/awk -f
+
+BEGIN
+{
+	sum = 0
+	for(i = 0; i <= 10; i++)
+	{
+		printf.....
+		...	
+	}
+	exit; #end
+}
+
+Associative Arrays in AWK
+
+
+
+
+-- SED --
+
+$ sed 's/sun/moon/g' filename // stream editor
+	All changed must be redirected fro stdin to stdout
+	sed -f script < filename
+
+$	sed [-n] [-e] [command] [file]
+	-n only print lines specified 
+	-f scriptfile next argument is filename
+
+1. multiple edits to the same file
+2. across a set of files
+3. extract contents of a file
+4. make edits in a pipeline
+
+ 
+
+-----------------------VI---------------------------
+
+:set ai -- this is to auto indent your code
+
+diff file1 file2 -- this shows (if any) whether there are differences
+
+md5sum file -- shows the checksum 128 bit hash for the file
+
+:ab <to abbreviate> <thing to replace> - this is useful for creating shortcuts to map whole peices of text, like a Java template. When hitting enter, we must use ^M for enter. Escape is ^M.
+
+:s/patt1/patt2/ -- substitue patt1 with patt2 
+ adding a /g at the end makes the changes global
+ adding a % before s makes it file global
+ for example :%s/moon/fucks/g makes it apply for the whole file
+
+
+
