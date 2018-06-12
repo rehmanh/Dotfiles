@@ -21,8 +21,8 @@ Complex keyboard modifications for macOS, **need karabiner elements software.**
 Place in `~/.config`
 
 Current modifications:
-* CAPS Lock -> META key 
-* META + ijkl for directional arrows
+* CAPS Lock -> Left Control key 
+* CAPS Lock + ijkl for directional arrows
 
 ---
 *vimrc*
