@@ -14,3 +14,4 @@ call pathogen#helptags()
 " filetype plugin indent on
 runtime! config/**/*.vim
 
+set backspace=indent,eol,start
